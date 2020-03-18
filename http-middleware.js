@@ -12,6 +12,11 @@ HttpMiddleware.create = function(gl, defaultApp) {
     return function(req, res, next) {
         var hostname = HttpMiddleware.sanitizeHostname(req);
 
+        if (req.path === '/ping') {
+            res.statusCode = 200;
+            return res.end("OK");
+        }
+
         req.on("error", function(err) {
             explainError(gl, err, "http_01_middleware_socket", hostname);
         });

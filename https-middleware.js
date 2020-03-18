@@ -16,12 +16,17 @@ SanitizeHost.create = function(gl, app) {
             }
         }
 
+        if (req.path === '/ping') {
+            res.statusCode = 200;
+            return res.end("OK");
+        }
+
         var hostname = HttpMiddleware.getHostname(req);
         // Replace the hostname, and get the safe version
         var safehost = HttpMiddleware.sanitizeHostname(req);
 
         // if no hostname, move along
-        if (!hostname || req.path === '/ping') {
+        if (!hostname) {
             realNext();
             return;
         }
