@@ -21,7 +21,7 @@ SanitizeHost.create = function(gl, app) {
         var safehost = HttpMiddleware.sanitizeHostname(req);
 
         // if no hostname, move along
-        if (!hostname) {
+        if (!hostname || req.path === '/ping') {
             realNext();
             return;
         }
