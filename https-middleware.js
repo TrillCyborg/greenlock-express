@@ -16,7 +16,7 @@ SanitizeHost.create = function(gl, app) {
             }
         }
 
-        if (req.path === '/ping') {
+        if (req.url === '/ping') {
             res.statusCode = 200;
             return res.end("OK");
         }

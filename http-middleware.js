@@ -12,7 +12,7 @@ HttpMiddleware.create = function(gl, defaultApp) {
     return function(req, res, next) {
         var hostname = HttpMiddleware.sanitizeHostname(req);
 
-        if (req.path === '/ping') {
+        if (req.url === '/ping') {
             res.statusCode = 200;
             return res.end("OK");
         }
