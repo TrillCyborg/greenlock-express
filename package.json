@@ -1,5 +1,5 @@
 {
-    "name": "@root/greenlock-express",
+    "name": "trillcyborg-greenlock-express",
     "version": "4.0.3",
     "description": "Free SSL and managed or automatic HTTPS for node.js with Express, Koa, Connect, Hapi, and all other middleware systems.",
     "main": "greenlock-express.js",
@@ -32,7 +32,7 @@
     "devDependencies": {},
     "repository": {
         "type": "git",
-        "url": "https://git.rootprojects.org/root/greenlock-express.js.git"
+        "url": "https://github.com/trillcyborg/greenlock-express"
     },
     "keywords": [
         "Let's Encrypt",
